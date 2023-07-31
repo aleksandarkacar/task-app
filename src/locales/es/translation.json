@@ -1,0 +1,11 @@
+{
+  "nav": { "title": "TaskApp-es" },
+  "btn": { "create": "Crear tarea" },
+  "app": { "layout": "Diseño" },
+  "modal": {
+    "title": "Eñtero Titlero",
+    "body": "Eñtero Bodyero",
+    "submit": "Submitero",
+    "cancel": "Cañclero"
+  }
+}
