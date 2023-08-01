@@ -1,11 +1,16 @@
 {
   "nav": { "title": "TaskApp-en" },
-  "btn": { "create": "Create Task" },
+  "btn": {
+    "create": "Create Task",
+    "english": "English",
+    "spanish": "Espanol"
+  },
   "app": { "layout": "Layout" },
   "modal": {
     "title": "Enter Title",
     "body": "Enter Body",
     "submit": "Submit",
     "cancel": "Cancel"
-  }
+  },
+  "task": { "done": "Done", "undo": "Undo" }
 }

@@ -22,6 +22,8 @@ import {
 import { TaskCard } from "./components/TaskCard";
 import CreateTaskModal from "./components/CreateTaskModal";
 
+import Navbar from "./components/Navbar";
+
 import { Task } from "./components/interfaces";
 import LanguageSwitcher from "./components/LanguageSwitcher";
 
@@ -49,43 +51,35 @@ function App() {
   console.log(t);
   return (
     <ThemeProvider theme={defaultTheme}>
-      <AppBar position="sticky">
-        <Toolbar>
-          <Stack direction="row">
-            <Typography variant="h6">{t("nav.title")}</Typography>
+      <Navbar />
+      <Box
+        sx={{
+          bgcolor: "background.paper",
+          pt: 8,
+          pb: 6,
+        }}
+      >
+        <Container>
+          <LanguageSwitcher />
+          <Typography component={"h1"} align="center">
+            {t("app.layout")}
+          </Typography>
+          <Stack justifyContent="center">
+            <CreateTaskModal onPost={handlePost} />
           </Stack>
-        </Toolbar>
-      </AppBar>
-      <main>
-        <Box
-          sx={{
-            bgcolor: "background.paper",
-            pt: 8,
-            pb: 6,
-          }}
-        >
-          <Container>
-            <LanguageSwitcher />
-            <Typography component={"h1"} align="center">
-              {t("app.layout")}
-            </Typography>
-            <Stack justifyContent="center">
-              <CreateTaskModal onPost={handlePost} />
-            </Stack>
-          </Container>
-        </Box>
-        <Stack spacing={2} direction={"column-reverse"} alignItems={"center"}>
-          {tasks.map((task, index) => (
-            <TaskCard
-              key={index}
-              task={task}
-              index={index}
-              onDelete={handleDelete}
-              onIsDone={handleIsDone}
-            />
-          ))}
-        </Stack>
-      </main>
+        </Container>
+      </Box>
+      <Stack spacing={2} direction={"column-reverse"} alignItems={"center"}>
+        {tasks.map((task, index) => (
+          <TaskCard
+            key={index}
+            task={task}
+            index={index}
+            onDelete={handleDelete}
+            onIsDone={handleIsDone}
+          />
+        ))}
+      </Stack>
     </ThemeProvider>
   );
 }

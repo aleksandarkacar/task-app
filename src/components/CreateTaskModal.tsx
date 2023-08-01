@@ -18,7 +18,7 @@ const CreateTaskModal = ({ onPost }: { onPost: (newTask: Task) => void }) => {
   };
 
   const handlePost = () => {
-    let newPost = { title: title, body: body, isDone: false };
+    const newPost = { title: title, body: body, isDone: false };
     onPost(newPost);
 
     setTitle("");
@@ -30,7 +30,7 @@ const CreateTaskModal = ({ onPost }: { onPost: (newTask: Task) => void }) => {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <Box>
       <Button onClick={handleOpen} variant="contained" color="primary">
         {t("btn.create")}
       </Button>
@@ -56,7 +56,7 @@ const CreateTaskModal = ({ onPost }: { onPost: (newTask: Task) => void }) => {
             variant="outlined"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            sx={{ mb: 2 }}
+            margin="dense"
           />
 
           <Typography variant="h6" gutterBottom>
@@ -69,15 +69,10 @@ const CreateTaskModal = ({ onPost }: { onPost: (newTask: Task) => void }) => {
             variant="outlined"
             value={body}
             onChange={(e) => setBody(e.target.value)}
-            sx={{ mb: 2 }}
+            margin="dense"
           />
 
-          <Button
-            onClick={handlePost}
-            variant="contained"
-            color="primary"
-            sx={{ mr: 2 }}
-          >
+          <Button onClick={handlePost} variant="contained" color="primary">
             {t("modal.submit")}
           </Button>
           <Button onClick={handleClose} variant="outlined">
@@ -85,7 +80,7 @@ const CreateTaskModal = ({ onPost }: { onPost: (newTask: Task) => void }) => {
           </Button>
         </Box>
       </Modal>
-    </div>
+    </Box>
   );
 };
 

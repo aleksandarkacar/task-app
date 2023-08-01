@@ -1,11 +1,16 @@
 {
   "nav": { "title": "TaskApp-es" },
-  "btn": { "create": "Crear tarea" },
+  "btn": {
+    "create": "Create Task",
+    "english": "English",
+    "spanish": "Espanol"
+  },
   "app": { "layout": "Diseño" },
   "modal": {
     "title": "Eñtero Titlero",
     "body": "Eñtero Bodyero",
     "submit": "Submitero",
     "cancel": "Cañclero"
-  }
+  },
+  "task": { "done": "Hecho", "undo": "Deshacer" }
 }

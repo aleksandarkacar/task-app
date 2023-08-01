@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { Button, Stack } from "@mui/material";
 
 const LanguageSwitcher = () => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const handleChangeLanguage = (language) => {
     i18n.changeLanguage(language);
@@ -11,10 +11,10 @@ const LanguageSwitcher = () => {
   return (
     <Stack spacing={2} direction="row">
       <Button variant="outlined" onClick={() => handleChangeLanguage("en")}>
-        English
+        {t("btn.english")}
       </Button>
       <Button variant="outlined" onClick={() => handleChangeLanguage("es")}>
-        Español
+        {t("btn.spanish")}
       </Button>
     </Stack>
   );

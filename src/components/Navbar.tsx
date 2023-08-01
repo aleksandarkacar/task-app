@@ -1,5 +1,5 @@
-import React from 'react';
-import DeleteIcon from '@mui/icons-material/Delete';
+import React from "react";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 import {
   AppBar,
@@ -10,33 +10,23 @@ import {
   ThemeProvider,
   createTheme,
   Container,
-} from '@mui/material';
+} from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const defaultTheme = createTheme();
 
-const Navbar: React.FC = () => {
-  return (<ThemeProvider theme={defaultTheme}>
-    <AppBar position="sticky">
-      <Toolbar>
-        <IconButton edge="start" color="inherit" aria-label="menu">
-            <DeleteIcon></DeleteIcon>
-        </IconButton>
-        <Stack direction='row'>
-            <Typography variant="h6">
-            TaskApp
-            </Typography>
-        </Stack>
-      </Toolbar>
-    </AppBar>
-    <main>
-        <Container>
-            <Typography component={"h1"}>
-                TaskAppLayout
-            </Typography>
-        </Container>
-    </main>
-
-  </ThemeProvider>
+const Navbar = () => {
+  const { t } = useTranslation();
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <AppBar position="sticky">
+        <Toolbar>
+          <Stack direction="row">
+            <Typography variant="h6">{t("nav.title")}</Typography>
+          </Stack>
+        </Toolbar>
+      </AppBar>
+    </ThemeProvider>
   );
 };
 

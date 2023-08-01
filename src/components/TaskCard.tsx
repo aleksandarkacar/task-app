@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { Task } from "./interfaces";
+import { useTranslation } from "react-i18next";
 
 interface TaskCardProps {
   task: Task;
@@ -23,6 +24,7 @@ export const TaskCard = ({
   onDelete,
   onIsDone,
 }: TaskCardProps) => {
+  const { t } = useTranslation();
   return (
     <Card sx={{ minWidth: "50%" }}>
       <CardContent
@@ -42,7 +44,7 @@ export const TaskCard = ({
             variant="contained"
             onClick={() => onIsDone(index)}
           >
-            {task.isDone ? "Undo" : "Done"}
+            {task.isDone ? t("task.undo") : t("task.done")}
           </Button>
           <IconButton
             edge="start"
