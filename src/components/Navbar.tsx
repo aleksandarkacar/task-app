@@ -1,15 +1,10 @@
-import React from "react";
-import DeleteIcon from "@mui/icons-material/Delete";
-
 import {
   AppBar,
   Toolbar,
   Typography,
-  IconButton,
   Stack,
   ThemeProvider,
   createTheme,
-  Container,
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
